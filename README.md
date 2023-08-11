@@ -4,6 +4,8 @@ This program constructs a binary search tree from its inorder and postorder/preo
 # Algorithm
 The key functions are:
 - ```build()```: Recursively constructs the BST given inorder and postorder/preorder queues
-- 
+- ```getNodes()```: Reads traversal sequence from input into a queue
+- ```buildTree()```: Wraps ```build()``` to handle postorder vs preorder
+- ```horizontal_printer()``` and ```vertical_printer()```: Print tree in horizontal and vertical formats
 # License
 This project is licensed under the MIT License
