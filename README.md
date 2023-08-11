@@ -3,12 +3,12 @@ This program constructs a binary search tree from its inorder and postorder/preo
 
 # Algorithm
 The key functions are:
-- ```build()```: Recursively constructs the BST given inorder and postorder/preorder queues
-- ```getNodes()```: Reads traversal sequence from input into a queue
-- ```buildTree()```: Wraps ```build()``` to handle postorder vs preorder
-- ```horizontal_printer()``` and ```vertical_printer()```: Print tree in horizontal and vertical formats
+- `build()`: Recursively constructs the BST given inorder and postorder/preorder queues
+- `getNodes()`: Reads traversal sequence from input into a queue
+- `buildTree()`: Wraps `build()` to handle postorder vs preorder
+- `horizontal_printer()` and `vertical_printer()`: Print tree in horizontal and vertical formats
 
-```build()``` uses the following logic:
+`build()` uses the following logic:
 - Base cases: empty queues or single node
 - Split inorder around root to get left and right halves
 - Split post/pre accordingly to get left and right subtrees
@@ -21,6 +21,13 @@ Traversal type is identified by comparing root to post/pre queue front.
 While using inorder and postorder/preorder to construct BSTs is a common technique, this implementation stands out for its elegant design:
 - **Queues as input**: Using queues to directly represent the traversals avoids overhead of mapping individual nodes. The queues serve dual purpose of input and driving recursion.
 - **Single build function**: By detecting traversal type upfront, `build()` can handle both cases seamlessly.
+- **Matching recursion to structure**: Splitting queues to mirror tree structure results in clean recursive implementation.
+- **Bottom up construction**: Building subtrees bottom up with correct roots mirrors natural construction flow.
+- **Root detection**: Simple checking of root against queue front to distinguish postorder vs preorder traversals.
+
+Together these choices result in a compact, optimized algorithm which elegantly reflects the underlying recursive tree structure. The use of queues, in particular, eliminates unnecessary mappings and results in an input-driven recursive design.
+
+So while using inorder/postorder/preorder is common, the specific techniques here demonstrate thoughtfulness and care in arriving at an algorithm that directly matches the problem constraints. The result is clean, efficient code with minimal overhead.
 
 # Usage
 Provide inorder traversal, followed by postorder or preorder traversal:
@@ -35,5 +42,6 @@ Enter the traversal:
 4 5 2 3 1
 ```
 Tree will be constructed and printed.
+
 # License
 This project is licensed under the MIT License
