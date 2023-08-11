@@ -19,7 +19,7 @@ Traversal type is identified by comparing root to post/pre queue front.
 
 # Algorithmic Cleverness
 While using inorder and postorder/preorder to construct BSTs is a common technique, this implementation stands out for its elegant design:
-- ****Queues as input****:
+- **Queues as input**:
 
 # Usage
 Provide inorder traversal, followed by postorder or preorder traversal:
