@@ -19,7 +19,8 @@ Traversal type is identified by comparing root to post/pre queue front.
 
 # Algorithmic Cleverness
 While using inorder and postorder/preorder to construct BSTs is a common technique, this implementation stands out for its elegant design:
-- **Queues as input**:
+- **Queues as input**: Using queues to directly represent the traversals avoids overhead of mapping individual nodes. The queues serve dual purpose of input and driving recursion.
+- **Single build function**: By detecting traversal type upfront, `build()` can handle both cases seamlessly.
 
 # Usage
 Provide inorder traversal, followed by postorder or preorder traversal:
